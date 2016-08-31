@@ -40,8 +40,8 @@ class Guests extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'phone' => 'Phone',
+            'name' => '姓名',
+            'phone' => '电话',
         ];
     }
 
