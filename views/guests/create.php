@@ -21,8 +21,10 @@ $this->context->layout = false;
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+
     <meta charset="utf-8" />
     <title></title>
+    <?php $this->head() ?>
     <meta name="location" content="">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
@@ -33,7 +35,6 @@ $this->context->layout = false;
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/ccode.css">
     <?= Html::csrfMetaTags() ?>
-    <?php $this->head() ?>
 
 </head>
 <body>
