@@ -59,7 +59,7 @@ $this->context->layout = false;
 
             ],
 
-            'options' => ['class' => 'table table-striped table-bordered '],
+            'options' => ['class' => 'table table-striped table-bordered  table-hover'],
 
         ]) ?>
 
