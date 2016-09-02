@@ -181,6 +181,9 @@ body{
     position: relative;
 }
 
+
+
+
 .reg-info h1 ul li:first-child{
     border: 1px solid #8F8E3C;
     color: #938E30;
@@ -212,6 +215,9 @@ body{
 
 .reg-info dl.r,.reg-info dl.i{
     padding: 10px 30px;
+}
+.reg-info dl.r{
+    padding-top: 30px;
 }
 .reg-info dl.r dt{
     height: 30px;
@@ -302,4 +308,15 @@ img.e{
 .reg-info dl.i dd:nth-of-type(2n){
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+@media screen and (max-width: 320px) {
+    .reg-info h1{
+        font-size: 26px;
+    }
+}
+@media screen and (min-width: 375px) {
+    .reg-info dl.r{
+        padding-top: 70px;
+    }
 }

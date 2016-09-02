@@ -8,6 +8,8 @@
 namespace app\commands;
 
 use yii\console\Controller;
+use Faker\Factory;
+use app\models\Guests;
 
 /**
  * This command echoes the first argument that you have entered.
@@ -26,5 +28,19 @@ class HelloController extends Controller
     public function actionIndex($message = 'hello world')
     {
         echo $message . "\n";
+    }
+
+    public  function actionAdd($count = 100 ){
+
+        while($count--) {
+            $guest = new Guests();
+            $faker = Factory::create();
+            $guest->name = $faker->name;
+            $guest->phone = $faker->phoneNumber;
+            if($guest->save()){
+
+                echo "suc!!";
+            }
+        }
     }
 }

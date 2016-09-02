@@ -18,6 +18,8 @@ class GuestsController extends Controller
     /**
      * @inheritdoc
      */
+
+    public $arr;
     public function behaviors()
     {
         return [
@@ -155,4 +157,43 @@ class GuestsController extends Controller
                                                                                                                                                                                                                                                                                                                                                                                                                                                                 echo "hi";
         return $this->render('codeshow',['model'=> $this->findModel($id)]);
     }
+
+    public function actionGetTen(){
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+//        $result = Guests::find()->where(['id'=>2])->all();
+//        return $result;
+
+        $range = Guests::find()->count();
+        $arr1 = range(1,$range);
+        shuffle($arr1);
+
+        $rows = (new \yii\db\Query())
+            ->select(['name', 'phone'])
+            ->from('guests')
+            ->where(['in', 'id',  array_slice($arr1,0,10)])
+            ->all();
+        header("Access-Control-Allow-Origin: *");
+        return $rows;
+
+    }
+
+    public function actionGetSix(){
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+//        $result = Guests::find()->where(['id'=>2])->all();
+//        return $result;
+
+        $range = Guests::find()->count();
+        $arr1 = range(1,$range);
+        shuffle($arr1);
+        $rows = (new \yii\db\Query())
+            ->select(['name', 'phone'])
+            ->from('guests')
+            ->where(['in', 'id',  array_slice($arr1,-20,6)])
+            ->all();
+        header("Access-Control-Allow-Origin: *");
+        return $rows;
+
+
+    }
+
 }
