@@ -182,7 +182,7 @@ class GuestsController extends Controller
          *
          * */
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                echo "hi";
+
         return $this->render('codeshow',['model'=> $this->findModel($id)]);
     }
 
