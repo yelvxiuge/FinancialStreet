@@ -154,6 +154,34 @@ class GuestsController extends Controller
     }
 
     public function actionGetCode($id){
+        /*
+         *         <?php echo  DetailView::widget([
+            'model' => $model,
+            'attributes' => [
+                'name',
+                'phone',
+//                [                      // the owner name of the model
+//                    'attribute' => 'phone',
+//                    'value' => $model->phone,
+//
+//                ],
+                [                      // the owner name of the model
+                    'label' => '抽奖码',
+                    'value' => 'T'.substr($model->phone,-4),
+                ],
+
+            ],
+
+            'options' => ['class' => 'table table-striped table-bordered  table-hover'],
+
+        ]) ?>
+         *
+         *
+         *
+         *
+         *
+         * */
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                 echo "hi";
         return $this->render('codeshow',['model'=> $this->findModel($id)]);
     }
